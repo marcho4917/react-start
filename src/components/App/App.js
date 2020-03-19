@@ -11,6 +11,7 @@ class App extends React.Component {
         <List title={['THINGS TO DO ', <sup>soon!</sup>]}>
           <p>I'm planning on doing all these things sooner, rather than later!</p>
         </List>
+        <List image={"/src/images/space.png"}></List>
       </main>
     )
   }
