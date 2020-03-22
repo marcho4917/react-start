@@ -9,7 +9,7 @@ class Creator extends React.Component {
   }
 
   static defaultProps = {
-    text: 'Add new item',
+    text: 'Add new list',
   }
 
   state = {

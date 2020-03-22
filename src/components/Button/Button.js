@@ -15,10 +15,11 @@ class Button extends React.Component {
   }
 
   activateConfirm() {
-    let str = this.props.variant;
+    const str = this.props.variant;
 
     if (str.search('confirm') != -1) {
       if (window.confirm("Do you really want to cancel?")) { 
+        this.props.onClick();
      }
     } else {
       this.props.onClick();
