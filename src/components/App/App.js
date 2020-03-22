@@ -9,12 +9,27 @@ class App extends React.Component {
     listData: [listData],
   }
 
+  addList(title) {
+    this.setState (state => (
+      {
+        listData: [
+          ...state.listData,
+          {
+            image: '',
+            descritpion: '',
+            title,
+          }
+        ]
+      }
+    ))
+
+  }
+
   render() {
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{pageContents.title}</h1>
         <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
-        <List {...listData} />
         <section className={styles.component}>
           {this.state.listData.map((listData, index) => (
           <List key={index} {...listData} /> ))}

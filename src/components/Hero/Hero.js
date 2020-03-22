@@ -6,7 +6,13 @@ import ReactHtmlParser from 'react-html-parser';
 const Hero = props => (
   <header className={styles.component}>
       <h2 className={styles.title}>{ReactHtmlParser(props.titleText)}</h2>
-      <img className={styles.image} src={props.image}></img>
+      {
+        if(props.image != null) {
+          <img className={styles.image} src={props.image}></img>
+        } else {
+          return null;
+        }
+      }
   </header>
 );
 
@@ -16,3 +22,10 @@ Hero.propTypes = {
 }
 
 export default Hero;
+
+
+if (isLoggedIn) {
+  button = <LogoutButton onClick={this.handleLogoutClick} />;
+} else {
+  button = <LoginButton onClick={this.handleLoginClick} />;
+}
