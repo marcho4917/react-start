@@ -18,9 +18,9 @@ class Button extends React.Component {
     const str = this.props.variant;
 
     if (str.search('confirm') != -1) {
-      if (window.confirm("Do you really want to cancel?")) { 
+      if (window.confirm('Do you really want to cancel?')) { 
         this.props.onClick();
-     }
+      }
     } else {
       this.props.onClick();
     }
@@ -29,7 +29,7 @@ class Button extends React.Component {
   render() {
     return (
       <button onClick={this.activateConfirm.bind(this)} className={styles.component + this.props.variant.split(' ').map(name => ' ' + (styles[name] || name)).join('')}>{this.props.children}</button>
-    )
+    );
   }
   
 }

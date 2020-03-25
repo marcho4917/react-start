@@ -18,10 +18,10 @@ class App extends React.Component {
             image: '',
             descritpion: '',
             title,
-          }
-        ]
+          },
+        ],
       }
-    ))
+    ));
 
   }
 
@@ -32,14 +32,14 @@ class App extends React.Component {
         <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
         <section className={styles.component}>
           {this.state.listData.map((listData, index) => (
-          <List key={index} {...listData} /> ))}
+            <List key={index} {...listData} /> ))}
           <div className={styles.creator}>
             <Creator text={settings.defaultText} action={title => this.addList(title)} />
           </div>
         </section>
       </main>
       
-    )
+    );
   }
 }
 
