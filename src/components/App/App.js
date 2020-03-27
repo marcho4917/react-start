@@ -1,41 +1,28 @@
 import React from 'react';
 import styles from './App.scss';
-import List from '../List/List.js';
-import {pageContents, listData, settings} from '../../data/dataStore';
-import Creator from '../Creator/Creator.js';
+import List from '../List/ListContainer.js';
+//import {listData} from '../../data/dataStore';
+//import Creator from '../Creator/Creator.js';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
-  state = {
-    listData: [listData],
+  static propTypes = {
+    title: PropTypes.node,
+    subtitle: PropTypes.node,
+    lists: PropTypes.array,
   }
-
-  addList(title) {
-    this.setState (state => (
-      {
-        listData: [
-          ...state.listData,
-          {
-            image: '',
-            descritpion: '',
-            title,
-          },
-        ],
-      }
-    ));
-
-  }
-
   render() {
+    const {title, subtitle, lists} = this.props;
     return (
       <main className={styles.component}>
-        <h1 className={styles.title}>{pageContents.title}</h1>
-        <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
+        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.subtitle}>{subtitle}</h2>
         <section className={styles.component}>
-          {this.state.listData.map((listData, index) => (
+          {lists.map((listData, index) => (
             <List key={index} {...listData} /> ))}
-          <div className={styles.creator}>
+          {/*<div className={styles.creator}>
             <Creator text={settings.defaultText} action={title => this.addList(title)} />
-          </div>
+          </div>*/}
         </section>
       </main>
       
@@ -44,4 +31,3 @@ class App extends React.Component {
 }
 
 export default App;
-
