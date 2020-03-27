@@ -20,7 +20,7 @@ class List extends React.Component {
       description: settings.defaultListDescription,
     }
     render() {
-      const {title, description, columns,image, addColumn} = this.props;
+      const {title, description, columns, image, addColumn} = this.props;
       return (
         <section className={styles.component}>
           <Hero titleText={title} image={image} />
