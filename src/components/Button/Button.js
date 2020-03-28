@@ -7,7 +7,7 @@ class Button extends React.Component {
   static propTypes = {
     variant: PropTypes.string,
     onClick: PropTypes.func,
-    children: PropTypes.string,
+    children: PropTypes.node,
   }
 
   static defaultProps = {
