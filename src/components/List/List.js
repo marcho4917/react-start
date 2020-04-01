@@ -24,10 +24,10 @@ class List extends React.Component {
       const {title, description, columns, image, addColumn} = this.props;
       return (
         <section className={styles.component}>
-          <Hero titleText={title} image={image} />
-          <div className={styles.description}>{ReactHtmlParser(description)}
-          </div>
           <Container>
+            <Hero titleText={title} image={image} />
+            <div className={styles.description}>{ReactHtmlParser(description)}
+            </div>
             <div className={styles.columns}>            
               {columns.map(columnData => (
                 <Column key={columnData.id} {...columnData} />
