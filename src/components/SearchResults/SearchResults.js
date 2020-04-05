@@ -7,10 +7,13 @@ import Container from '../Container/Container';
 class SearchResults extends React.Component {
     static propTypes = {
       cards: PropTypes.array || [],
+      changeSearchString: PropTypes.func,
     }
+
     render() {
       const {cards} = this.props;
       return (
+        this.props.changeSearchString(),
         <Container>
           <section className={styles.component}>
             <div className={styles.cards}>

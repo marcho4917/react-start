@@ -7,8 +7,8 @@ const mapStateToProps = (state, props) => ({
   cards: getCardsForSearch(state, props.match.params.searchString),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  changeSearchString: newSearchString => dispatch(createAction_changeSearchString(newSearchString)),
+const mapDispatchToProps = (dispatch, props) => ({
+  changeSearchString: () => dispatch(createAction_changeSearchString(props.match.params.searchString)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
