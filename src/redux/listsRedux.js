@@ -1,4 +1,5 @@
 import shortid from 'shortid';
+import { listData } from '../data/dataStore';
 
 // selectors
 export const getListsForApp = ({lists}, listId) => lists.filter(list => list.listId == listId);
@@ -11,7 +12,7 @@ const createActionName = name => `app/${reducerName}/${name}`;
 export const ADD_LIST = createActionName('ADD_LIST');
 
 // action creators
-export const createActionAddList = payload => ({ payload: { ...payload, id: shortid.generate() }, type: ADD_LIST });
+export const createActionAddList = payload => ({ payload: { ...payload, image: listData.image, id: shortid.generate() }, type: ADD_LIST });
 
 // reducer
 export default function reducer(state = [], action = {}) {
