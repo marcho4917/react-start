@@ -6,7 +6,7 @@ import Container from '../Container/Container';
 
 class SearchResults extends React.Component {
     static propTypes = {
-      cards: PropTypes.array,
+      cards: PropTypes.array || [],
     }
     render() {
       const {cards} = this.props;
