@@ -1,0 +1,20 @@
+@import '../../styles/settings.scss';
+
+.component {
+  width: calc(33% - 12px);
+  background: $color-light;
+  margin-top: 20px;
+  padding: ($base-size * 1.5);
+  border-radius: $radius;
+  box-shadow: 0 ($base-size / 4) 0 rgba(0,0,0,0.3);
+  color: $color-dark;
+}
+
+@media (max-width: 767px) {
+
+  .component {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+}
